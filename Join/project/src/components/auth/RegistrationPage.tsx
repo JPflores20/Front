@@ -1,19 +1,19 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
-import LoginForm from './LoginForm';
-import SocialLogin from './SocialLogin';
+import RegistrationForm from './RegistrationForm';
 
-const LoginPage: React.FC = () => {
-  const handleLogin = (email: string, password: string, remember: boolean) => {
-    console.log('Login credentials:', { email, password, remember });
-  };
-
-  const handleGoogleLogin = () => {
-    console.log('Google login clicked');
-  };
-
-  const handleAppleLogin = () => {
-    console.log('Apple login clicked');
+const RegistrationPage: React.FC = () => {
+  const handleRegistration = (formData: {
+    firstName: string;
+    maternalLastName: string;
+    paternalLastName: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+    areaOfKnowledge: string;
+  }) => {
+    console.log('Registration data:', formData);
+    // In a real app, you would handle registration here
   };
 
   return (
@@ -28,26 +28,20 @@ const LoginPage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-white">
-              Bienvenido a <span className="text-light-blue-500">CORA</span>
+              Join <span className="text-light-blue-500">CORA</span>
             </h1>
-            <p className="text-gray-400">Inicia sesión en tu cuenta para continuar</p>
+            <p className="text-gray-400">Create your account to get started</p>
           </div>
           
-          {/* Login form */}
-          <LoginForm onSubmit={handleLogin} />
+          {/* Registration form */}
+          <RegistrationForm onSubmit={handleRegistration} />
           
-          {/* Social login options */}
-          <SocialLogin 
-            onGoogleLogin={handleGoogleLogin}
-            onAppleLogin={handleAppleLogin}
-          />
-          
-          {/* Sign up link */}
+          {/* Sign in link */}
           <div className="text-center pt-2">
             <p className="text-sm text-gray-400">
-              Don't have an account?{' '}
+              Already have an account?{' '}
               <a href="#" className="font-medium text-light-blue-500 hover:text-light-blue-400 transition-colors">
-                Sign up
+                Sign in
               </a>
             </p>
           </div>
@@ -57,4 +51,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default RegistrationPage;

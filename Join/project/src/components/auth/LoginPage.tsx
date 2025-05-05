@@ -6,14 +6,17 @@ import SocialLogin from './SocialLogin';
 const LoginPage: React.FC = () => {
   const handleLogin = (email: string, password: string, remember: boolean) => {
     console.log('Login credentials:', { email, password, remember });
+    // In a real app, you would handle authentication here
   };
 
   const handleGoogleLogin = () => {
     console.log('Google login clicked');
+    // In a real app, you would handle Google authentication
   };
 
   const handleAppleLogin = () => {
     console.log('Apple login clicked');
+    // In a real app, you would handle Apple authentication
   };
 
   return (
@@ -28,9 +31,9 @@ const LoginPage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-white">
-              Bienvenido a <span className="text-light-blue-500">CORA</span>
+              Welcome to <span className="text-light-blue-500">CORA</span>
             </h1>
-            <p className="text-gray-400">Inicia sesión en tu cuenta para continuar</p>
+            <p className="text-gray-400">Sign in to your account to continue</p>
           </div>
           
           {/* Login form */}
