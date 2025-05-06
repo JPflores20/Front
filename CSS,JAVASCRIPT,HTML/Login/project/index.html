@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORA - Login</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class="login-container">
+        <div class="login-logo-container">
+          <h1 class="company-name">CORA</h1>
+        </div>
+        <div class="login-form-container">
+          <h2 class="welcome-text">Welcome to CORA</h2>
+          <p class="login-subtitle">Please sign in to continue</p>
+          
+          <form id="login-form" class="login-form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-container">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div class="error-message" id="email-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-container password-container">
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <button type="button" id="toggle-password" class="toggle-password" aria-label="Toggle password visibility"></button>
+                <div class="error-message" id="password-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-options">
+              <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+              </div>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="login-button">Sign In</button>
+            
+            <div class="divider">
+              <span>or</span>
+            </div>
+            
+            <div class="social-login">
+              <button type="button" class="social-button google-button" id="google-login">
+                <span class="social-icon google-icon"></span>
+                <span>Sign in with Google</span>
+              </button>
+              <button type="button" class="social-button apple-button" id="apple-login">
+                <span class="social-icon apple-icon"></span>
+                <span>Sign in with Apple</span>
+              </button>
+            </div>
+          </form>
+          
+          <div class="signup-link">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
