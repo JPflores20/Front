@@ -1,66 +1,73 @@
 /**
- * Sets up animations for the login page
+ * Configura las animaciones para la página de login
  */
 export function setupLoginAnimation() {
-  // Animate form elements on load
+  // Animar elementos del formulario al cargar
   const formElements = [
-    document.querySelector('.company-name'),
-    document.querySelector('.welcome-text'),
-    document.querySelector('.login-subtitle'),
-    ...document.querySelectorAll('.form-group'),
-    document.querySelector('.form-options'),
-    document.querySelector('.login-button'),
-    document.querySelector('.divider'),
-    document.querySelector('.social-login'),
-    document.querySelector('.signup-link')
+    document.querySelector('.company-name'), // Elemento del nombre de la compañía
+    document.querySelector('.welcome-text'), // Texto de bienvenida
+    document.querySelector('.login-subtitle'), // Subtítulo del login
+    ...document.querySelectorAll('.form-group'), // Todos los grupos de formulario
+    document.querySelector('.form-options'), // Opciones del formulario
+    document.querySelector('.login-button'), // Botón de login
+    document.querySelector('.divider'), // Divisor visual
+    document.querySelector('.social-login'), // Login con redes sociales
+    document.querySelector('.signup-link') // Enlace de registro
   ];
   
-  // Apply staggered fade-in animation
+  // Aplicar animación escalonada de aparición
   formElements.forEach((element, index) => {
-    if (!element) return;
+    if (!element) return; // Saltar si el elemento no existe
     
+    // Configurar estado inicial oculto
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
     element.style.transition = `opacity 0.5s ease, transform 0.5s ease`;
     
+    // Aplicar animación con retardo escalonado
     setTimeout(() => {
       element.style.opacity = '1';
       element.style.transform = 'translateY(0)';
-    }, 100 + index * 100);
+    }, 100 + index * 100); // Retardo incremental de 100ms por elemento
   });
   
-  // Add hover effects for interactive elements
+  // Añadir efectos hover a elementos interactivos
   const interactiveElements = [
-    ...document.querySelectorAll('input'),
-    ...document.querySelectorAll('button'),
-    ...document.querySelectorAll('a')
+    ...document.querySelectorAll('input'), // Todos los campos de entrada
+    ...document.querySelectorAll('button'), // Todos los botones
+    ...document.querySelectorAll('a') // Todos los enlaces
   ];
   
   interactiveElements.forEach(element => {
     if (!element) return;
     
+    // Efecto al pasar el ratón
     element.addEventListener('mouseenter', () => {
       element.style.transition = 'transform 0.2s ease';
       if (element.tagName.toLowerCase() === 'input') {
-        element.style.transform = 'scale(1.01)';
+        element.style.transform = 'scale(1.01)'; // Ligero zoom en inputs
       }
     });
     
+    // Restablecer al quitar el ratón
     element.addEventListener('mouseleave', () => {
       element.style.transform = 'scale(1)';
     });
   });
   
-  // Add ripple effect to buttons
+  // Efecto ripple (ondas) para botones
   const buttons = document.querySelectorAll('button');
   
   buttons.forEach(button => {
     button.addEventListener('click', function(e) {
+      // Calcular posición del click relativa al botón
       const rect = this.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       
+      // Crear elemento para el efecto ripple
       const ripple = document.createElement('span');
+      // Estilos iniciales del ripple
       ripple.style.position = 'absolute';
       ripple.style.width = '1px';
       ripple.style.height = '1px';
@@ -71,23 +78,25 @@ export function setupLoginAnimation() {
       ripple.style.top = `${y}px`;
       ripple.style.animation = 'ripple 0.6s ease-out';
       
+      // Preparar el botón para contener el efecto
       this.style.position = 'relative';
       this.style.overflow = 'hidden';
       this.appendChild(ripple);
       
+      // Eliminar el ripple después de la animación
       setTimeout(() => {
         ripple.remove();
       }, 600);
     });
   });
   
-  // Add ripple animation to stylesheet
+  // Añadir animación ripple al CSS
   const style = document.createElement('style');
   style.textContent = `
     @keyframes ripple {
       to {
-        transform: scale(100);
-        opacity: 0;
+        transform: scale(100); // Escala progresiva
+        opacity: 0; // Desvanecimiento progresivo
       }
     }
   `;

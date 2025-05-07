@@ -1,0 +1,148 @@
+/* /* 
+ * Estilos para el formulario de registro
+ * Utiliza variables CSS para colores y efectos visuales modernos
+ */
+
+/* Texto en color azul claro - reusable en cualquier elemento */
+.blue-text {
+  color: var(--primary-light-blue);
+}
+
+/* Contenedor principal del formulario de registro */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registration-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.registration-subtitle {
+  font-size: 1rem;
+  color: var(--primary-light-blue);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Estilos base para todos los inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--secondary-blue);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--primary-white);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary-light-blue);
+  box-shadow: 0 0 0 2px rgba(127, 179, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para elementos select personalizados */
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--secondary-blue);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--primary-white);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-light-blue);
+  box-shadow: 0 0 0 2px rgba(127, 179, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+select option {
+  background-color: var(--primary-navy);
+  color: var(--primary-white);
+}
+
+/* Estilos para el botón de registro */
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-light-blue);
+  color: var(--primary-navy);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.register-button:hover {
+  background-color: #5a9dff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Contenedor del enlace de login */
+.login-link {
+  text-align: center;
+}
+
+.login-link p {
+  color: var(--primary-white);
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: var(--primary-light-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.login-link a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 480px) {
+  .registration-container {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 100%;
+  }
+}

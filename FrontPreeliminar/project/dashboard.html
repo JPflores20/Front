@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Viewport para diseño responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORA - Dashboard</title>
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./dashboard.css">
+    
+    <!-- Fuentes de Google (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Phosphor -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+  </head>
+  
+  <!-- Cuerpo del documento con clase para estilos -->
+  <body class="dashboard-body">
+    <!-- Contenedor principal de la aplicación -->
+    <div id="app" class="dashboard-layout">
+      
+      <!-- ========== Barra Lateral ========== -->
+      <aside class="sidebar" id="sidebar">
+        <!-- Encabezado del sidebar -->
+        <div class="sidebar-header">
+          <h1 class="company-name">CORA</h1>
+          <!-- Botón para cerrar el sidebar (visible en móviles) -->
+          <button id="close-sidebar" class="close-sidebar">
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+        
+        <!-- Navegación principal -->
+        <nav class="sidebar-nav">
+          <!-- Elementos del menú con iconos -->
+          <a href="#" class="nav-item active">
+            <i class="ph ph-house"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-upload-simple"></i>
+            <span>Upload Article</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-books"></i>
+            <span>My Articles</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-user-circle"></i>
+            <span>Profile</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-bell"></i>
+            <span>Notifications</span>
+          </a>
+        </nav>
+        
+        <!-- Pie del sidebar -->
+        <div class="sidebar-footer">
+          <a href="#" class="nav-item logout">
+            <i class="ph ph-sign-out"></i>
+            <span>Log Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- ========== Contenido Principal ========== -->
+      <main class="main-content">
+        <!-- Barra superior -->
+        <header class="top-bar">
+          <!-- Botón para mostrar/ocultar sidebar en móviles -->
+          <button id="toggle-sidebar" class="menu-button">
+            <i class="ph ph-list"></i>
+          </button>
+          
+          <!-- Barra de búsqueda -->
+          <div class="search-bar">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" placeholder="Search articles...">
+          </div>
+          
+          <!-- Menú de usuario -->
+          <div class="user-menu">
+            <!-- Botón de notificaciones con badge -->
+            <button class="notifications-button">
+              <i class="ph ph-bell"></i>
+              <span class="notification-badge">3</span>
+            </button>
+            
+            <!-- Perfil de usuario -->
+            <div class="user-profile">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="User Profile" class="profile-picture">
+              <span class="user-name">Sarah Johnson</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Contenido del dashboard -->
+        <div class="dashboard-content">
+          <!-- Sección de artículos recientes -->
+          <h2 class="section-title">Recent Articles</h2>
+          
+          <!-- Grid de artículos -->
+          <div class="articles-grid">
+            <!-- Tarjeta de artículo 1 -->
+            <article class="article-card">
+              <div class="article-status pending">Pending Review</div>
+              <h3>Machine Learning in Healthcare</h3>
+              <p>An analysis of modern ML applications in medical diagnosis and treatment planning...</p>
+              <div class="article-meta">
+                <span><i class="ph ph-clock"></i> Submitted 2 days ago</span>
+                <span><i class="ph ph-chat-circle"></i> 5 comments</span>
+              </div>
+            </article>
+            
+            <!-- Tarjeta de artículo 2 -->
+            <article class="article-card">
+              <div class="article-status approved">Approved</div>
+              <h3>Quantum Computing Advances</h3>
+              <p>Recent developments in quantum computing and their implications for cryptography...</p>
+              <div class="article-meta">
+                <span><i class="ph ph-clock"></i> Submitted 5 days ago</span>
+                <span><i class="ph ph-chat-circle"></i> 12 comments</span>
+              </div>
+            </article>
+            
+            <!-- Tarjeta de artículo 3 -->
+            <article class="article-card">
+              <div class="article-status in-review">In Review</div>
+              <h3>Climate Change Impact Analysis</h3>
+              <p>Statistical analysis of global temperature changes over the past century...</p>
+              <div class="article-meta">
+                <span><i class="ph ph-clock"></i> Submitted 1 week ago</span>
+                <span><i class="ph ph-chat-circle"></i> 8 comments</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Sección de solicitudes de revisión -->
+          <h2 class="section-title">Review Requests</h2>
+          <div class="review-requests">
+            <!-- Tarjeta de solicitud 1 -->
+            <div class="review-card">
+              <div class="review-header">
+                <h3>Neural Networks in Computer Vision</h3>
+                <span class="deadline">Due in 3 days</span>
+              </div>
+              <p>A comprehensive study of neural network architectures for image recognition...</p>
+              <div class="review-actions">
+                <button class="button-secondary">Decline</button>
+                <button class="button-primary">Accept Review</button>
+              </div>
+            </div>
+            
+            <!-- Tarjeta de solicitud 2 -->
+            <div class="review-card">
+              <div class="review-header">
+                <h3>Sustainable Energy Solutions</h3>
+                <span class="deadline">Due in 5 days</span>
+              </div>
+              <p>Analysis of renewable energy implementation in urban environments...</p>
+              <div class="review-actions">
+                <button class="button-secondary">Decline</button>
+                <button class="button-primary">Accept Review</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    <!-- Script JavaScript -->
+    <script type="module" src="/dashboard.js"></script>
+  </body>
+</html>

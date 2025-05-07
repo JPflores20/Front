@@ -1,35 +1,51 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Viewport para diseño responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CORA - Registration</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./register.css">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="./style.css"> <!-- Estilos base -->
+    <link rel="stylesheet" href="./register.css"> <!-- Estilos específicos del registro -->
+    
+    <!-- Fuentes de Google (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
+  
   <body>
+    <!-- Contenedor principal de la aplicación -->
     <div id="app">
+      <!-- Contenedor del formulario de registro -->
       <div class="registration-container">
+        <!-- Logo/encabezado de la compañía -->
         <div class="registration-logo-container">
           <h1 class="company-name"><span class="blue-text">CORA</span></h1>
         </div>
+        
+        <!-- Contenedor del formulario -->
         <div class="registration-form-container">
           <h2 class="welcome-text">Account Registration</h2>
           <p class="registration-subtitle">Please complete all fields to register</p>
           
+          <!-- Formulario de registro -->
           <form id="registration-form" class="registration-form">
+            <!-- Grupo de campo: Nombre -->
             <div class="form-group">
               <label for="firstName">First Name</label>
               <div class="input-container">
                 <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                <!-- Contenedor para mensajes de error -->
                 <div class="error-message" id="firstName-error"></div>
               </div>
             </div>
             
+            <!-- Grupo de campo: Apellido paterno -->
             <div class="form-group">
               <label for="paternalLastName">Paternal Last Name</label>
               <div class="input-container">
@@ -38,6 +54,7 @@
               </div>
             </div>
             
+            <!-- Grupo de campo: Apellido materno -->
             <div class="form-group">
               <label for="maternalLastName">Maternal Last Name</label>
               <div class="input-container">
@@ -46,6 +63,7 @@
               </div>
             </div>
             
+            <!-- Grupo de campo: Email -->
             <div class="form-group">
               <label for="email">Email</label>
               <div class="input-container">
@@ -54,15 +72,18 @@
               </div>
             </div>
             
+            <!-- Grupo de campo: Contraseña -->
             <div class="form-group">
               <label for="password">Password</label>
               <div class="input-container password-container">
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <!-- Botón para mostrar/ocultar contraseña -->
                 <button type="button" id="toggle-password" class="toggle-password" aria-label="Toggle password visibility"></button>
                 <div class="error-message" id="password-error"></div>
               </div>
             </div>
             
+            <!-- Grupo de campo: Confirmar contraseña -->
             <div class="form-group">
               <label for="confirmPassword">Confirm Password</label>
               <div class="input-container password-container">
@@ -72,6 +93,7 @@
               </div>
             </div>
             
+            <!-- Grupo de campo: Área de conocimiento -->
             <div class="form-group">
               <label for="knowledgeArea">Area of Knowledge</label>
               <div class="input-container">
@@ -88,15 +110,19 @@
               </div>
             </div>
             
+            <!-- Botón de registro -->
             <button type="submit" class="register-button">Register</button>
             
+            <!-- Enlace para iniciar sesión -->
             <div class="login-link">
-              <p>¿Ya tienes una cuenta? <a href="index.html">Iniciar sesión</a></p>
+              <p>Already have an account? <a href="index.html">Sign in</a></p>
             </div>
           </form>
         </div>
       </div>
     </div>
+    
+    <!-- Script JavaScript para funcionalidad del formulario -->
     <script type="module" src="/register.js"></script>
   </body>
 </html>

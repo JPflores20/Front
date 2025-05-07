@@ -1,31 +1,56 @@
 <!doctype html>
+<!-- Declara el tipo de documento como HTML5 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Establece la codificación de caracteres como UTF-8 -->
+
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Define el icono que aparece en la pestaña del navegador -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hace que el diseño sea responsive ajustando el ancho al dispositivo -->
+
     <title>CORA - Login</title>
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+
     <link rel="stylesheet" href="./style.css">
+    <!-- Enlace a la hoja de estilos personalizada -->
+
+    <!-- Preconexiones para mejorar el rendimiento de carga de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fuente 'Inter' cargada desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="app">
+      <!-- Contenedor principal de toda la aplicación -->
+
       <div class="login-container">
+        <!-- Contenedor del área de inicio de sesión -->
+
         <div class="login-logo-container">
+          <!-- Contenedor del logo o nombre de la empresa -->
           <h1 class="company-name">CORA</h1>
         </div>
+
         <div class="login-form-container">
+          <!-- Contenedor del formulario de login -->
           <h2 class="welcome-text">Welcome to CORA</h2>
           <p class="login-subtitle">Please sign in to continue</p>
           
           <form id="login-form" class="login-form">
+            <!-- Formulario de inicio de sesión -->
+
             <div class="form-group">
               <label for="email">Email</label>
               <div class="input-container">
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <!-- Campo de entrada para el correo electrónico -->
                 <div class="error-message" id="email-error"></div>
+                <!-- Espacio para mostrar errores relacionados con el email -->
               </div>
             </div>
             
@@ -33,26 +58,34 @@
               <label for="password">Password</label>
               <div class="input-container password-container">
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <!-- Campo de entrada para la contraseña -->
                 <button type="button" id="toggle-password" class="toggle-password" aria-label="Toggle password visibility"></button>
+                <!-- Botón para mostrar u ocultar la contraseña -->
                 <div class="error-message" id="password-error"></div>
+                <!-- Espacio para mostrar errores relacionados con la contraseña -->
               </div>
             </div>
             
             <div class="form-options">
+              <!-- Opciones adicionales como recordar sesión y recuperación de contraseña -->
               <div class="remember-me">
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember me</label>
               </div>
               <a href="#" class="forgot-password">Forgot password?</a>
+              <!-- Enlace para recuperar contraseña -->
             </div>
             
             <button type="submit" class="login-button">Sign In</button>
-            
+            <!-- Botón para enviar el formulario -->
+
             <div class="divider">
               <span>or</span>
             </div>
-            
+            <!-- Línea divisora entre el login tradicional y el social -->
+
             <div class="social-login">
+              <!-- Botones de inicio de sesión con redes sociales -->
               <button type="button" class="social-button google-button" id="google-login">
                 <span class="social-icon google-icon"></span>
                 <span>Sign in with Google</span>
@@ -65,11 +98,14 @@
           </form>
           
           <div class="signup-link">
+            <!-- Enlace para registrar una nueva cuenta -->
             <p>Don't have an account? <a href="#">Sign up</a></p>
           </div>
         </div>
       </div>
     </div>
+
     <script type="module" src="/main.js"></script>
+    <!-- Script principal de JavaScript que probablemente gestiona la lógica de frontend -->
   </body>
 </html>

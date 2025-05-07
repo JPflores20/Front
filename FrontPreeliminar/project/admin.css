@@ -1,0 +1,280 @@
+/* Contenedor principal del área de administración */
+.admin-content {
+  padding: 1.5rem; /* Espaciado interno */
+}
+
+/* Estilos para el encabezado de sección */
+.section-header {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre elementos */
+  align-items: center; /* Centra verticalmente */
+  margin-bottom: 2rem; /* Margen inferior */
+}
+
+/* Estilo para el título de la página */
+.page-title {
+  font-size: 1.5rem;
+  color: var(--primary-navy); /* Color definido por variable CSS */
+  margin: 0; /* Elimina márgenes por defecto */
+}
+
+/* Contenedor de filtros */
+.filters {
+  display: flex;
+  gap: 1rem; /* Espacio entre elementos hijos */
+  align-items: center;
+}
+
+/* Estilo para los selectores de filtro */
+.filter-select {
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--primary-navy);
+  font-size: 0.95rem;
+  cursor: pointer;
+  appearance: none; /* Elimina estilos por defecto del navegador */
+  /* Icono de flecha personalizado */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232d3748'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+/* Grid para la lista de usuarios */
+.users-list {
+  display: grid;
+  /* Columnas responsivas con un ancho mínimo de 300px */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem; /* Espacio entre tarjetas */
+}
+
+/* Estilo para cada tarjeta de usuario */
+.user-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease; /* Transición suave para efectos hover */
+}
+
+/* Efecto hover para las tarjetas */
+.user-card:hover {
+  transform: translateY(-2px); /* Levanta ligeramente la tarjeta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Encabezado de la tarjeta de usuario */
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio entre avatar e info */
+  margin-bottom: 1rem;
+}
+
+/* Avatar del usuario */
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* Forma circular */
+  object-fit: cover; /* Ajuste de imagen */
+}
+
+/* Información del usuario */
+.user-info h3 {
+  color: var(--primary-navy);
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem; /* Margen solo inferior */
+}
+
+/* Estilo para el email del usuario */
+.user-info .user-email {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Área/Departamento del usuario */
+.user-area {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #f8f9fa;
+  border-radius: 20px; /* Forma de pastilla */
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0.5rem 0;
+}
+
+/* Contenedor de roles del usuario */
+.user-roles {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los roles se envuelvan */
+  gap: 0.5rem; /* Espacio entre roles */
+  margin-top: 1rem;
+}
+
+/* Estilo base para los tags de rol */
+.role-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px; /* Forma de pastilla */
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Variantes de colores para cada tipo de rol */
+.role-tag.author {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.role-tag.reviewer {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.role-tag.organizer {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Acciones del usuario (botones) */
+.user-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end; /* Alinea a la derecha */
+}
+
+/* Estilos para el modal (ventana emergente) */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Clase para mostrar el modal */
+.modal.active {
+  display: flex;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px; /* Ancho máximo */
+  position: relative;
+}
+
+/* Encabezado del modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Título del modal */
+.modal-header h2 {
+  color: var(--primary-navy);
+  margin: 0;
+}
+
+/* Botón para cerrar el modal */
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Estilos para el formulario de edición */
+.edit-user-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Etiquetas del formulario */
+.edit-user-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-navy);
+  font-weight: 500;
+}
+
+/* Campos de entrada del formulario */
+.edit-user-form input[type="text"],
+.edit-user-form input[type="email"],
+.edit-user-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--primary-navy);
+}
+
+/* Contenedor para la selección de roles */
+.roles-selection {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Estilo para cada checkbox de rol */
+.role-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Estilo personalizado para los checkboxes */
+.role-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Acciones del formulario (botones) */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column; /* Cambia a disposición vertical */
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  /* Elementos de filtro a ancho completo */
+  .filter-select,
+  .search-bar {
+    width: 100%;
+  }
+
+  /* Ajustes para el modal en móviles */
+  .modal-content {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}

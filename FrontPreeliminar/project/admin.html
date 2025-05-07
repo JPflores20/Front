@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Metadatos y configuración básica -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORA - Administration Panel</title>
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="./style.css"> <!-- Estilos base -->
+    <link rel="stylesheet" href="./dashboard.css"> <!-- Estilos del dashboard -->
+    <link rel="stylesheet" href="./admin.css"> <!-- Estilos específicos de admin -->
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Phosphor -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+  </head>
+  
+  <body class="dashboard-body">
+    <div id="app" class="dashboard-layout">
+      <!-- ========== BARRA LATERAL ========== -->
+      <aside class="sidebar" id="sidebar">
+        <!-- Encabezado de la barra lateral -->
+        <div class="sidebar-header">
+          <h1 class="company-name">CORA</h1> <!-- Nombre de la empresa -->
+          <button id="close-sidebar" class="close-sidebar"> <!-- Botón para cerrar en móvil -->
+            <i class="ph ph-x"></i> <!-- Icono de cierre -->
+          </button>
+        </div>
+        
+        <!-- Navegación principal -->
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item"> <!-- Elemento de menú -->
+            <i class="ph ph-squares-four"></i> <!-- Icono -->
+            <span>Dashboard</span> <!-- Texto -->
+          </a>
+          <a href="#" class="nav-item active"> <!-- Elemento activo -->
+            <i class="ph ph-users"></i>
+            <span>Role Assignment</span> <!-- Asignación de roles -->
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-presentation-chart"></i>
+            <span>Conferences</span> <!-- Conferencias -->
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-chart-line"></i>
+            <span>Reports</span> <!-- Reportes -->
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-gear"></i>
+            <span>Settings</span> <!-- Configuración -->
+          </a>
+        </nav>
+        
+        <!-- Pie de la barra lateral -->
+        <div class="sidebar-footer">
+          <a href="#" class="nav-item logout"> <!-- Opción de cierre de sesión -->
+            <i class="ph ph-sign-out"></i>
+            <span>Log Out</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- ========== CONTENIDO PRINCIPAL ========== -->
+      <main class="main-content">
+        <!-- Barra superior -->
+        <header class="top-bar">
+          <button id="toggle-sidebar" class="menu-button"> <!-- Botón para mostrar/ocultar barra -->
+            <i class="ph ph-list"></i>
+          </button>
+          <h1 class="page-title">Role Assignment</h1> <!-- Título de página actual -->
+          
+          <!-- Menú de usuario -->
+          <div class="user-menu">
+            <button class="notifications-button"> <!-- Notificaciones -->
+              <i class="ph ph-bell"></i>
+              <span class="notification-badge">2</span> <!-- Contador -->
+            </button>
+            <div class="user-profile"> <!-- Perfil de usuario -->
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" 
+                   alt="Admin Profile" class="profile-picture">
+              <span class="user-name">Admin</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Contenido administrativo -->
+        <div class="admin-content">
+          <!-- Sección de usuarios -->
+          <div class="users-section">
+            <div class="section-header">
+              <h2>Users by Area</h2> <!-- Título de sección -->
+              
+              <!-- Filtros y búsqueda -->
+              <div class="filters">
+                <select id="area-filter" class="filter-select"> <!-- Filtro por área -->
+                  <option value="all">All Areas</option>
+                  <option value="science">Science</option>
+                  <option value="technology">Technology</option>
+                  <option value="engineering">Engineering</option>
+                  <option value="mathematics">Mathematics</option>
+                </select>
+                
+                <div class="search-bar"> <!-- Barra de búsqueda -->
+                  <i class="ph ph-magnifying-glass"></i>
+                  <input type="text" placeholder="Search users...">
+                </div>
+              </div>
+            </div>
+
+            <!-- Lista de usuarios (se llenará dinámicamente) -->
+            <div class="users-list">
+              <!-- User cards will be dynamically populated -->
+            </div>
+          </div>
+
+          <!-- ========== MODAL DE EDICIÓN ========== -->
+          <div id="user-edit-modal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>Edit User</h2> <!-- Título del modal -->
+                <button class="close-modal"> <!-- Botón de cierre -->
+                  <i class="ph ph-x"></i>
+                </button>
+              </div>
+              
+              <!-- Formulario de edición -->
+              <form id="edit-user-form" class="edit-user-form">
+                <!-- Grupo de formulario: Nombre -->
+                <div class="form-group">
+                  <label for="edit-name">Name</label>
+                  <input type="text" id="edit-name" name="name" required>
+                </div>
+                
+                <!-- Grupo de formulario: Email -->
+                <div class="form-group">
+                  <label for="edit-email">Email</label>
+                  <input type="email" id="edit-email" name="email" required>
+                </div>
+                
+                <!-- Grupo de formulario: Área de conocimiento -->
+                <div class="form-group">
+                  <label for="edit-area">Knowledge Area</label>
+                  <select id="edit-area" name="area" required>
+                    <option value="science">Science</option>
+                    <option value="technology">Technology</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="mathematics">Mathematics</option>
+                  </select>
+                </div>
+                
+                <!-- Grupo de formulario: Roles -->
+                <div class="form-group">
+                  <label>Roles</label>
+                  <div class="roles-selection">
+                    <!-- Checkbox para rol de Autor -->
+                    <label class="role-checkbox">
+                      <input type="checkbox" name="roles" value="author">
+                      <span>Author</span>
+                    </label>
+                    <!-- Checkbox para rol de Revisor -->
+                    <label class="role-checkbox">
+                      <input type="checkbox" name="roles" value="reviewer">
+                      <span>Reviewer</span>
+                    </label>
+                    <!-- Checkbox para rol de Organizador -->
+                    <label class="role-checkbox">
+                      <input type="checkbox" name="roles" value="organizer">
+                      <span>Organizer</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <!-- Acciones del formulario -->
+                <div class="form-actions">
+                  <button type="button" class="button-secondary" id="cancel-edit">Cancel</button>
+                  <button type="submit" class="button-primary">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    <!-- Script principal -->
+    <script type="module" src="/admin.js"></script>
+  </body>
+</html>

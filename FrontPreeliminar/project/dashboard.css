@@ -1,0 +1,444 @@
+/* Estilos generales del cuerpo del dashboard */
+.dashboard-body {
+  background-color: #f8f9fa; /* Color de fondo claro */
+  color: #2d3748; /* Color de texto principal */
+}
+
+/* Layout principal del dashboard */
+.dashboard-layout {
+  display: flex; /* Layout flexible */
+  min-height: 100vh; /* Altura mínima de toda la ventana */
+}
+
+/* ========== Estilos de la barra lateral ========== */
+.sidebar {
+  width: 280px; /* Ancho fijo */
+  background-color: var(--primary-navy); /* Color de fondo (azul marino) */
+  padding: 1.5rem; /* Espaciado interno */
+  display: flex;
+  flex-direction: column; /* Disposición vertical */
+  transition: transform 0.3s ease; /* Animación suave */
+  position: fixed; /* Posición fija */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100; /* Asegura que esté por encima */
+}
+
+/* Encabezado de la barra lateral */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Nombre de la compañía en el sidebar */
+.sidebar .company-name {
+  color: var(--primary-light-blue); /* Color azul claro */
+  font-size: 1.75rem; /* Tamaño grande */
+  margin: 0; /* Sin margen */
+}
+
+/* Botón para cerrar el sidebar (oculto por defecto) */
+.close-sidebar {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-white); /* Color blanco */
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Navegación principal */
+.sidebar-nav {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espacio entre elementos */
+}
+
+/* Elementos de navegación */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio entre icono y texto */
+  padding: 0.75rem 1rem;
+  color: var(--primary-white); /* Texto blanco */
+  text-decoration: none;
+  border-radius: 8px; /* Bordes redondeados */
+  transition: all 0.2s ease; /* Transición suave */
+}
+
+/* Efecto hover para elementos de navegación */
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+}
+
+/* Estilo para elemento activo */
+.nav-item.active {
+  background-color: var(--primary-light-blue);
+  color: var(--primary-navy); /* Texto azul marino */
+}
+
+/* Iconos en la navegación */
+.nav-item i {
+  font-size: 1.25rem; /* Tamaño de iconos */
+}
+
+/* Pie de la barra lateral */
+.sidebar-footer {
+  margin-top: auto; /* Empuja hacia abajo */
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+/* Estilo para botón de logout */
+.logout {
+  color: #ff4757; /* Color rojo */
+}
+
+/* ========== Estilos del contenido principal ========== */
+.main-content {
+  flex: 1; /* Ocupa todo el espacio restante */
+  margin-left: 280px; /* Deja espacio para el sidebar */
+  padding: 1.5rem;
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Barra superior con búsqueda y perfil */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espacio entre elementos */
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Botón del menú (oculto por defecto) */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* Tamaño grande */
+  color: var(--primary-navy);
+  cursor: pointer;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f8f9fa; /* Fondo gris claro */
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+/* Icono de búsqueda */
+.search-bar i {
+  color: #64748b; /* Color gris */
+}
+
+/* Campo de entrada de búsqueda */
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  color: #2d3748; /* Color de texto */
+}
+
+/* Elimina outline al enfocar */
+.search-bar input:focus {
+  outline: none;
+}
+
+/* Menú de usuario (notificaciones y perfil) */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Botón de notificaciones */
+.notifications-button {
+  position: relative; /* Para posicionar el badge */
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+  cursor: pointer;
+}
+
+/* Badge de notificaciones */
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff4757; /* Color rojo */
+  color: white;
+  font-size: 0.75rem; /* Tamaño pequeño */
+  padding: 2px 6px;
+  border-radius: 10px; /* Forma circular */
+}
+
+/* Perfil de usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Foto de perfil */
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Forma circular */
+  object-fit: cover; /* Ajuste de imagen */
+}
+
+/* Nombre de usuario */
+.user-name {
+  font-weight: 500; /* Texto seminegrita */
+  color: var(--primary-navy);
+}
+
+/* ========== Contenido del dashboard ========== */
+.dashboard-content {
+  margin-top: 2rem; /* Espacio superior */
+}
+
+/* Título de sección */
+.section-title {
+  font-size: 1.5rem;
+  color: var(--primary-navy);
+  margin-bottom: 1.5rem;
+}
+
+/* Grid de artículos */
+.articles-grid {
+  display: grid;
+  /* Columnas responsivas con ancho mínimo de 300px */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem; /* Espacio entre tarjetas */
+  margin-bottom: 2.5rem;
+}
+
+/* Tarjeta de artículo */
+.article-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animaciones */
+}
+
+/* Efecto hover para tarjetas */
+.article-card:hover {
+  transform: translateY(-2px); /* Levanta ligeramente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Estado del artículo */
+.article-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px; /* Forma de pastilla */
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Variantes de estado */
+.article-status.pending {
+  background-color: #fff3cd; /* Amarillo claro */
+  color: #856404; /* Amarillo oscuro */
+}
+
+.article-status.approved {
+  background-color: #d4edda; /* Verde claro */
+  color: #155724; /* Verde oscuro */
+}
+
+.article-status.in-review {
+  background-color: #cce5ff; /* Azul claro */
+  color: #004085; /* Azul oscuro */
+}
+
+/* Título del artículo */
+.article-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-navy);
+}
+
+/* Texto del artículo */
+.article-card p {
+  color: #64748b; /* Color gris */
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Metadatos del artículo */
+.article-meta {
+  display: flex;
+  gap: 1rem;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* Elementos individuales de metadatos */
+.article-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ========== Sección de revisiones ========== */
+.review-requests {
+  display: grid;
+  /* Columnas responsivas con ancho mínimo de 400px */
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta de revisión */
+.review-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Encabezado de la tarjeta */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+/* Título de la revisión */
+.review-header h3 {
+  font-size: 1.1rem;
+  color: var(--primary-navy);
+}
+
+/* Fecha límite */
+.deadline {
+  font-size: 0.85rem;
+  color: #ff4757; /* Color rojo */
+  font-weight: 500;
+}
+
+/* Texto de la revisión */
+.review-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Acciones de revisión */
+.review-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Estilos base para botones */
+.button-primary,
+.button-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Animación suave */
+}
+
+/* Botón primario */
+.button-primary {
+  background-color: var(--primary-light-blue);
+  color: var(--primary-navy);
+  border: none;
+}
+
+/* Hover para botón primario */
+.button-primary:hover {
+  background-color: #5a9dff; /* Color más oscuro */
+}
+
+/* Botón secundario */
+.button-secondary {
+  background-color: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Hover para botón secundario */
+.button-secondary:hover {
+  background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+/* ========== Estilos responsivos ========== */
+@media (max-width: 1024px) {
+  /* Oculta el sidebar por defecto en tablets */
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  /* Muestra el sidebar cuando tiene clase active */
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Elimina el margen para el contenido principal */
+  .main-content {
+    margin-left: 0;
+  }
+
+  /* Muestra el botón del menú */
+  .menu-button {
+    display: block;
+  }
+
+  /* Muestra el botón de cerrar */
+  .close-sidebar {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Oculta el nombre de usuario en móviles */
+  .user-name {
+    display: none;
+  }
+
+  /* Cambia a una sola columna las revisiones */
+  .review-requests {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para móviles pequeños */
+  .top-bar {
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 1rem;
+  }
+
+  /* Mueve la barra de búsqueda al final */
+  .search-bar {
+    order: 3;
+    width: 100%;
+  }
+
+  /* Cambia a una sola columna los artículos */
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+}
