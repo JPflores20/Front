@@ -8,6 +8,8 @@
   color: var(--primary-light-blue);
 }
 
+
+
 /* Contenedor principal del formulario de registro */
 .registration-container {
   display: flex;
