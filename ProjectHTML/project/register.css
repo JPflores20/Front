@@ -1,114 +1,130 @@
+/* ===== ESTILOS PARA TEXTO AZUL ===== */
+/* Aplica color azul claro usando una variable CSS */
 .blue-text {
   color: var(--primary-light-blue);
 }
 
+/* ===== CONTENEDOR PRINCIPAL DEL FORMULARIO ===== */
 .registration-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;  /* Organiza los elementos en columna */
+  align-items: center;     /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
   width: 100%;
-  max-width: 520px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 520px;        /* Ancho máximo del contenedor */
+  margin: 2rem auto;       /* Margen superior/inferior y centrado horizontal */
+  padding: 2rem;           /* Espaciado interno */
+  border-radius: 16px;     /* Bordes redondeados */
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo semi-transparente */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
 
+/* Efectos al pasar el mouse sobre el contenedor */
 .registration-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px); /* Levanta ligeramente el contenedor */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
 }
 
+/* ===== ESTILOS PARA EL SUBTÍTULO ===== */
 .registration-subtitle {
   font-size: 1rem;
-  color: var(--primary-light-blue);
-  margin-bottom: 2rem;
-  text-align: center;
+  color: var(--primary-light-blue); /* Color azul claro */
+  margin-bottom: 2rem;    /* Espacio inferior */
+  text-align: center;     /* Texto centrado */
 }
 
+/* ===== ESTILOS PARA SELECT (DROPDOWN) ===== */
 select {
   width: 100%;
   padding: 12px 16px;
   border: 1px solid var(--secondary-blue);
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: var(--primary-white);
+  background-color: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente */
+  color: var(--primary-white); /* Texto blanco */
   font-size: 1rem;
-  transition: all 0.2s ease;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  transition: all 0.2s ease; /* Transición suave para todos los cambios */
+  appearance: none; /* Elimina el estilo por defecto del navegador */
+  
+  /* Agrega un icono personalizado de flecha */
+  background-image: url("data:image/svg+xml,%3Csvg...");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;
-  cursor: pointer;
+  cursor: pointer; /* Cambia el cursor al pasar */
 }
 
+/* Estilo cuando el select está enfocado */
 select:focus {
-  outline: none;
+  outline: none; /* Elimina el contorno por defecto */
   border-color: var(--primary-light-blue);
-  box-shadow: 0 0 0 2px rgba(127, 179, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(127, 179, 255, 0.3); /* Sombra de enfoque */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo un poco más claro */
 }
 
+/* Estilo para las opciones del dropdown */
 select option {
-  background-color: var(--primary-navy);
-  color: var(--primary-white);
+  background-color: var(--primary-navy); /* Fondo azul marino */
+  color: var(--primary-white); /* Texto blanco */
 }
 
+/* ===== ESTILOS PARA EL BOTÓN DE REGISTRO ===== */
 .register-button {
   width: 100%;
   padding: 12px;
-  background-color: var(--primary-light-blue);
-  color: var(--primary-navy);
+  background-color: var(--primary-light-blue); /* Fondo azul claro */
+  color: var(--primary-navy); /* Texto azul marino */
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 600; /* Texto en negrita */
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 1.5rem;
+  transition: all 0.3s ease; /* Transición suave */
+  margin-bottom: 1.5rem; /* Espacio inferior */
 }
 
+/* Efectos al pasar el mouse sobre el botón */
 .register-button:hover {
-  background-color: #5a9dff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #5a9dff; /* Color azul más claro */
+  transform: translateY(-2px); /* Efecto de levantar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
+/* Efecto al hacer clic en el botón */
 .register-button:active {
-  transform: translateY(0);
-  box-shadow: none;
+  transform: translateY(0); /* Vuelve a posición normal */
+  box-shadow: none; /* Elimina sombra */
 }
 
+/* ===== ENLACE PARA INICIAR SESIÓN ===== */
 .login-link {
-  text-align: center;
+  text-align: center; /* Texto centrado */
 }
 
 .login-link p {
-  color: var(--primary-white);
-  font-size: 0.9rem;
+  color: var(--primary-white); /* Texto blanco */
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
 }
 
 .login-link a {
-  color: var(--primary-light-blue);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  color: var(--primary-light-blue); /* Color azul claro */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 500; /* Grosor de fuente medio */
+  transition: color 0.2s ease; /* Transición de color suave */
 }
 
+/* Efectos al pasar el mouse sobre el enlace */
 .login-link a:hover {
-  color: white;
-  text-decoration: underline;
+  color: white; /* Color blanco */
+  text-decoration: underline; /* Subrayado al pasar */
 }
 
+/* ===== MEDIA QUERIES PARA DISPOSITIVOS MÓVILES ===== */
 @media (max-width: 480px) {
   .registration-container {
-    padding: 1.5rem;
-    margin: 1rem;
-    max-width: 100%;
+    padding: 1.5rem; /* Menos padding */
+    margin: 1rem; /* Menos margen */
+    max-width: 100%; /* Ocupa todo el ancho */
   }
 }
