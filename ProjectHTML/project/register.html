@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORA - Registration</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class="registration-container">
+        <div class="registration-logo-container">
+          <h1 class="company-name"><span class="blue-text">CORA</span></h1>
+        </div>
+        <div class="registration-form-container">
+          <h2 class="welcome-text">Account Registration</h2>
+          <p class="registration-subtitle">Please complete all fields to register</p>
+          
+          <form id="registration-form" class="registration-form">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <div class="input-container">
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                <div class="error-message" id="firstName-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="paternalLastName">Paternal Last Name</label>
+              <div class="input-container">
+                <input type="text" id="paternalLastName" name="paternalLastName" placeholder="Enter your paternal last name" required>
+                <div class="error-message" id="paternalLastName-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="maternalLastName">Maternal Last Name</label>
+              <div class="input-container">
+                <input type="text" id="maternalLastName" name="maternalLastName" placeholder="Enter your maternal last name" required>
+                <div class="error-message" id="maternalLastName-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-container">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div class="error-message" id="email-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-container password-container">
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <button type="button" id="toggle-password" class="toggle-password" aria-label="Toggle password visibility"></button>
+                <div class="error-message" id="password-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-container password-container">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                <button type="button" id="toggle-confirm-password" class="toggle-password" aria-label="Toggle password visibility"></button>
+                <div class="error-message" id="confirmPassword-error"></div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="knowledgeArea">Area of Knowledge</label>
+              <div class="input-container">
+                <select id="knowledgeArea" name="knowledgeArea" required>
+                  <option value="">Select an area</option>
+                  <option value="science">Science</option>
+                  <option value="technology">Technology</option>
+                  <option value="engineering">Engineering</option>
+                  <option value="mathematics">Mathematics</option>
+                  <option value="arts">Arts</option>
+                  <option value="humanities">Humanities</option>
+                </select>
+                <div class="error-message" id="knowledgeArea-error"></div>
+              </div>
+            </div>
+            
+            <button type="submit" class="register-button">Register</button>
+            
+            <div class="login-link">
+              <p>Already have an account? <a href="index.html">Sign in</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/register.js"></script>
+  </body>
+</html>
